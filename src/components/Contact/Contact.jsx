@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from 'prop-types';
 import css from './Contact.module.css';
 
-const Contact = ({ key, name, number }) => (
-    <li className={css.item} key={key}>
+const Contact = ({ id, name, number }) => (
+    <li className={css.item} key={id}>
     {name}: {number}
+    <button type="submit" className={css.itemBtn}>Delete</button>
     </li>
   );
     
   Contact.propTypes = {
-    key: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
   };
