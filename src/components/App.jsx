@@ -31,6 +31,13 @@ class App extends Component {
     
       this.setState({ contacts: arrayContacts}); 
     }
+  }; 
+
+  deleteContact = name => {
+    const arrayContacts = this.state.contacts;
+    const index = arrayContacts.findIndex(contact => contact.name === name);
+    arrayContacts.splice(index,1);
+    this.setState({ contacts: arrayContacts});
   };
 
   changeFilter = e => {
@@ -60,6 +67,7 @@ class App extends Component {
           />  
           <ContactList 
           arrayNames={visibleContacts}
+          onClick={this.deleteContact}
           /> 
       </div>
     );
